@@ -4,7 +4,7 @@ import InfiniteCanvas from './components/InfiniteCanvas';
 
 function App() {
   return (
-    <InfiniteCanvas/>
+    <InfiniteCanvas data={{x: 10, y: 20}}/>
   );
 }
 
