@@ -1,11 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {
+  DndContext, 
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+
 import InfiniteCanvas from './components/InfiniteCanvas';
 
 function App() {
-  return (
-    <InfiniteCanvas data={{x: 10, y: 20}}/>
-  );
+  return <InfiniteCanvas data={[{x: 10}]}></InfiniteCanvas>
 }
 
 export default App;

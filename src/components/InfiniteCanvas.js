@@ -10,8 +10,6 @@ const InfiniteCanvas = ({data}) => {
   const [mouseMoveX, setMouseMoveX] = useState(0)
   const [mouseMoveY, setMouseMoveY] = useState(0)
 
-
-
   useEffect(() => {
     const canvas = canvasRef.current
 
@@ -26,7 +24,6 @@ const InfiniteCanvas = ({data}) => {
 
   const draw = () => {
 
-
     context.fillStyle = 'white'
     context.fillRect(0, 0, window.innerWidth, window.innerHeight)
 
@@ -34,12 +31,11 @@ const InfiniteCanvas = ({data}) => {
     for (let item in data) {
       context.fillRect(mouseMoveX,mouseMoveY, 20, 20)
     }
-
-
+    
   }
 
   const onMouseMove = (event) => {
-    console.log(event)
+    console.log(`x:${event.clientX} y:${event.clientX}`)
     setMouseMoveX(event.clientX);
     setMouseMoveY(event.clientY);
 
