@@ -14,6 +14,8 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 
+import './App.css' 
+
 import InfiniteCanvas from './components/InfiniteCanvas';
 
 function App() {

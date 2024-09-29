@@ -20,12 +20,18 @@ const InfiniteCanvas = ({data}) => {
     console.log(context)
     setContext(context)
 
+    
+
   },[data])
 
   const draw = () => {
 
-    context.fillStyle = 'white'
-    context.fillRect(0, 0, window.innerWidth, window.innerHeight)
+    const backgroundColor = "#ff00ff"
+
+    context.fillStyle = backgroundColor
+    context.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height)
+
+
 
     context.fillStyle = 'black'
     for (let item in data) {
@@ -40,7 +46,6 @@ const InfiniteCanvas = ({data}) => {
     setMouseMoveY(event.clientY);
 
     draw()
-
   }
 
 
