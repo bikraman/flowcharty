@@ -26,12 +26,26 @@ const InfiniteCanvas = ({data}) => {
 
   const draw = () => {
 
-    const backgroundColor = "#ff00ff"
+    const backgroundColor = 'beige'
+
+    const canvasWidth = canvasRef.current.width;
+    const canvasHeight = canvasRef.current.height
 
     context.fillStyle = backgroundColor
-    context.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height)
+    context.fillRect(0, 0, canvasWidth, canvasHeight )
 
+    const blockSize = 45
 
+    context.strokeStyle = "#000000"
+    context.globalAlpha = 0.1
+
+    for(let i = 0; i < canvasHeight; i = i + blockSize) {
+      for(let j = 0; j < canvasWidth; j = j + blockSize) {
+          context.strokeRect(j, i, blockSize, blockSize )
+      }
+    }
+
+    context.globalAlpha = 1.0
 
     context.fillStyle = 'black'
     for (let item in data) {
